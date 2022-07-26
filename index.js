@@ -13,6 +13,9 @@ app.get('/getFile', async (req, res) => {
   const { fileurl } = req.query;
   fetch(fileurl).then(response => response.buffer()).then(buff => {
     res.end(buff);
+  }).catch(err => {
+    console.error(err);
+    res.send("whoops");
   });
 });
 
