@@ -16,4 +16,6 @@ app.get('/getFile', async (req, res) => {
   });
 });
 
-app.listen('9000');
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT);
